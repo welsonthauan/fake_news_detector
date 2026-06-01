@@ -1,27 +1,270 @@
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-font-family: 'Inter', sans-serif;
-min-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-background:
-radial-gradient(circle at top left, #7c3aed, transparent 40%),
-radial-gradient(circle at bottom right,#86b6d4, transparent 40%),
-#0f172a;
-color: white;
-padding: 20px;
+    font-family: 'Inter', sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at top left, #7c3aed, transparent 40%),
+        radial-gradient(circle at bottom right, #06b6d4, transparent 40%),
+        #0f172a;
+
+    color: white;
+
+    padding: 20px;
+}
+
 .container {
-width: 100%;
-max-width: 720px;
-padding: 35px;
-border-radius: 28px;
-background: rgba(255,255,255,0.08);
-backdrop-filter: blur(18px);
-border: 1px solid rgba(255,255,255,0.1);
-box-shadow:
-0 20px 50px rgba(0,0,0,0.35);
-44 }
-text-align: center;
+    width: 100%;
+    max-width: 720px;
+
+    padding: 35px;
+
+    border-radius: 28px;
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.35);
+
+    text-align: center;
+}
+.logo {
+    font-size: 58px;
+    
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 16px;
+
+    opacity: 0.8;
+
+    margin-bottom: 28px;
+}
+
+textarea {
+    width: 100%;
+
+    height: 140px;
+
+    border: none;
+
+    outline: none;
+
+    resize: none;
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    font-size: 16px;
+
+    font-family: 'Inter', sans-serif;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    transition: 0.3s;
+}
+textarea:focus {
+    background: rgba(255,255,255,0.12);
+
+    transform: scale(1.01);
+}
+
+textarea::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+button {
+    margin-top: 22px;
+
+    border: none;
+
+    padding: 15px 28px;
+
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: white;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        #22c55e,
+        #14b8a6
+    );
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 10px 25px rgba(20,184,166,0.25);
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 30px rgba(20,184,166,0.4);
+}
+#result {
+    margin-top: 28px;
+
+    padding: 24px;
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    text-align: left;
+
+    animation: fadeIn 0.3s ease;
+}
+
+.result-title {
+    text-align: center;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    margin-bottom: 22px;
+}
+
+.fake {
+    color: #ff6b6b;
+}
+
+.real {
+    color: #4ade80;
+}
+
+.stats {
+    display: flex;
+
+    gap: 14px;
+
+    margin-bottom: 22px;
+}
+.stat-card {
+    flex: 1;
+
+    padding: 16px;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.05);
+
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 14px;
+
+    opacity: 0.7;
+
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.explanation {
+    background: rgba(255,255,255,0.04);
+
+    padding: 18px;
+
+    border-radius: 16px;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+    opacity: 0.92;
+}
+
+.loading {
+    text-align: center;
+
+    padding: 10px;
+
+    font-size: 16px;
+
+    opacity: 0.8;
+
+    animation: pulse 1.2s infinite;
+}
+@keyframes pulse {
+
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 768px) {
+
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    textarea {
+        height: 120px;
+    }
+}
